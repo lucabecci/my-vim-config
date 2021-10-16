@@ -10,6 +10,7 @@ set history=1000
 set showmode
 set background=dark
 set nocompatible
+set noswapfile
 
 call plug#begin()
 Plug 'tpope/vim-fugitive'
