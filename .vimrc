@@ -1,41 +1,42 @@
-call plug#begin('~/.vim/plugged')
+"GLOBALS
+set tabstop=2
+set shiftwidth=2
+set expandtab
+set nowrap
+set number
+set wildmenu
+set wildmode=list:longest
+set history=1000
+set showmode
+set background=dark
+set nocompatible
 
-
-Plug 'junegunn/vim-easy-align'
-Plug 'https://github.com/junegunn/vim-github-dashboard.git'
-Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
-Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
-Plug 'fatih/vim-go', { 'tag': '*' }
-Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-
-Plug 'pangloss/vim-javascript'    " JavaScript support
-Plug 'leafgarland/typescript-vim' " TypeScript syntax
-Plug 'maxmellon/vim-jsx-pretty'   " JS and JSX syntax
-Plug 'jparise/vim-graphql'        " GraphQL syntax
-
-Plug 'neoclide/coc.nvim', { 'branch' : 'release' }
+call plug#begin()
+Plug 'tpope/vim-fugitive'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'pangloss/vim-javascript'
+Plug 'leafgarland/typescript-vim'
+Plug 'maxmellon/vim-jsx-pretty'
+Plug 'dense-analysis/ale'
+Plug 'morhetz/gruvbox'
+Plug 'preservim/nerdtree'
+Plug 'frazrepo/vim-rainbow'
+Plug 'preservim/nerdcommenter'
+Plug 'itchyny/lightline.vim'
+Plug 'jiangmiao/auto-pairs'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
-let g:coc_disable_startup_warning = 1
-let g:coc_global_extensions = [ 'coc-tsserver' ]
+"CONFIGURATION OF NERDTHREE
+nnoremap <F2> :NERDTreeToggle<CR>
+nnoremap <F3> :NERDTreeClose<CR>
 
-" NERDTreeToggle
-map <F2> :NERDTreeToggle<CR>
-map <F3> :NERDTreeClose<CR>
-" Source Vim configuration file and install plugins
-nnoremap <silent><leader>1 :source ~/.vimrc \| :PlugInstall<CR>
+"SCHEME
+colorscheme gruvbox
 
-" Remap keys for applying codeAction to the current line.
-nmap <leader>ac  <Plug>(coc-codeaction)
-" Apply AutoFix to problem on the current line.
-nmap <leader>qf  <Plug>(coc-fix-current)
-
-" GoTo code navigation.
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
+"VARS
+let g:coc_global_extensions = ['coc-tsserver']
+let g:javascript_plugin_jsdoc = 1
+let g:airline#extensions#tabline#enabled = 1
 
