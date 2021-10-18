@@ -13,6 +13,7 @@ set nocompatible
 set noswapfile
 
 call plug#begin()
+Plug 'vimsence/vimsence'
 Plug 'tpope/vim-fugitive'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'pangloss/vim-javascript'
