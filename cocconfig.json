@@ -1,0 +1,8 @@
+{ 
+  "yaml.schemas": { 
+    "kubernetes": "/**.manifest.yaml"
+  }, 
+  "go.goplsOptions": { 
+    "completeUnimported": true
+  }
+} 
