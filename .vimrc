@@ -11,8 +11,12 @@ set showmode
 set background=dark
 set nocompatible
 set noswapfile
-
+set foldmethod=syntax
+let NERDTreeShowHidden=1
 call plug#begin()
+Plug 'vim-syntastic/syntastic' 
+Plug 'Valloric/YouCompleteMe'
+Plug 'jackguo380/vim-lsp-cxx-highlight'
 Plug 'vimsence/vimsence'
 Plug 'tpope/vim-fugitive'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -20,6 +24,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'dense-analysis/ale'
+Plug 'vimsence/vimsence'
 Plug 'morhetz/gruvbox'
 Plug 'preservim/nerdtree'
 Plug 'frazrepo/vim-rainbow'
@@ -38,8 +43,14 @@ nnoremap <F3> :NERDTreeClose<CR>
 "SCHEME
 colorscheme gruvbox
 
-"VARS
+"VARS 
 let g:coc_global_extensions = ['coc-tsserver']
 let g:javascript_plugin_jsdoc = 1
 let g:airline#extensions#tabline#enabled = 1
+"cpp
+filetype on
+filetype plugin on
+autocmd FileType cpp setlocal makeprg=g\+\+\ %\ \-g\ \-std\=c\+\+17\ \-Wall
+let g:ycm_global_ycm_extra_conf = '~/.vim/plugged/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
+
 
