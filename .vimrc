@@ -11,7 +11,7 @@ set showmode
 set background=dark
 set nocompatible
 set noswapfile
-set foldmethod=syntax
+set foldmethod=indent
 let NERDTreeShowHidden=1
 call plug#begin()
 Plug 'vim-syntastic/syntastic' 
@@ -36,6 +36,9 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 call plug#end()
 
+"MY BINDS
+nnoremap <C-k> za<CR>
+
 "CONFIGURATION OF NERDTHREE
 nnoremap <F2> :NERDTreeToggle<CR>
 nnoremap <F3> :NERDTreeClose<CR>
@@ -52,5 +55,5 @@ filetype on
 filetype plugin on
 autocmd FileType cpp setlocal makeprg=g\+\+\ %\ \-g\ \-std\=c\+\+17\ \-Wall
 let g:ycm_global_ycm_extra_conf = '~/.vim/plugged/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
-
+c
 
