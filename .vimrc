@@ -12,22 +12,24 @@ set background=dark
 set nocompatible
 set noswapfile
 set foldmethod=indent
+set mouse=a
 let NERDTreeShowHidden=1
 call plug#begin()
+Plug 'sbdchd/neoformat'
+Plug 'vimsence/vimsence'
 Plug 'vim-syntastic/syntastic' 
 Plug 'Valloric/YouCompleteMe'
 Plug 'jackguo380/vim-lsp-cxx-highlight'
-Plug 'vimsence/vimsence'
-Plug 'tpope/vim-fugitive'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'dense-analysis/ale'
-Plug 'vimsence/vimsence'
-Plug 'morhetz/gruvbox'
+Plug 'morhetz/gruvbox' 
+Plug 'sheerun/vim-polyglot'
 Plug 'preservim/nerdtree'
 Plug 'frazrepo/vim-rainbow'
+Plug 'tpope/vim-fugitive'
 Plug 'preservim/nerdcommenter'
 Plug 'itchyny/lightline.vim'
 Plug 'jiangmiao/auto-pairs'
@@ -38,14 +40,14 @@ call plug#end()
 
 "MY BINDS
 nnoremap <C-k> za<CR>
-
 "CONFIGURATION OF NERDTHREE
 nnoremap <F2> :NERDTreeToggle<CR>
 nnoremap <F3> :NERDTreeClose<CR>
 
 "SCHEME
-colorscheme gruvbox
-
+colorscheme gruvbox 
+"Prettier conf
+let g:neoformat_try_node_exe = 1
 "VARS 
 let g:coc_global_extensions = ['coc-tsserver']
 let g:javascript_plugin_jsdoc = 1
@@ -55,5 +57,5 @@ filetype on
 filetype plugin on
 autocmd FileType cpp setlocal makeprg=g\+\+\ %\ \-g\ \-std\=c\+\+17\ \-Wall
 let g:ycm_global_ycm_extra_conf = '~/.vim/plugged/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
-c
+
 
