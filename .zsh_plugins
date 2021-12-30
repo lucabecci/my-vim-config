@@ -1,0 +1,6 @@
+lugins=(
+	git
+	zsh-autosuggestions
+	zsh-syntax-highlighting
+	kubectl
+)
